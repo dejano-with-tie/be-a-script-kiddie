@@ -1,0 +1,49 @@
+   0x0000000000001189 <+0>:     endbr64 
+   0x000000000000118d <+4>:     push   rbp
+   0x000000000000118e <+5>:     mov    rbp,rsp
+   0x0000000000001191 <+8>:     sub    rsp,0x10
+   0x0000000000001195 <+12>:    mov    DWORD PTR [rbp-0x4],edi
+   0x0000000000001198 <+15>:    mov    QWORD PTR [rbp-0x10],rsi
+
+[1] compare something == 2
+   0x000000000000119c <+19>:    cmp    DWORD PTR [rbp-0x4],0x2
+   0x00000000000011a0 <+23>:    jne    0x11fb <main+114>
+   0x00000000000011a2 <+25>:    mov    rax,QWORD PTR [rbp-0x10]
+   0x00000000000011a6 <+29>:    add    rax,0x8
+   0x00000000000011aa <+33>:    mov    rax,QWORD PTR [rax]
+   0x00000000000011ad <+36>:    mov    rsi,rax
+   0x00000000000011b0 <+39>:    lea    rdi,[rip+0xe4d]        # 0x2004
+   0x00000000000011b7 <+46>:    mov    eax,0x0
+
+call printf
+   0x00000000000011bc <+51>:    call   0x1080 <printf@plt>	# prints Checking License: <key>
+   0x00000000000011c1 <+56>:    mov    rax,QWORD PTR [rbp-0x10]
+   0x00000000000011c5 <+60>:    add    rax,0x8
+   0x00000000000011c9 <+64>:    mov    rax,QWORD PTR [rax]
+   0x00000000000011cc <+67>:    lea    rsi,[rip+0xe47]        # 0x201a
+   0x00000000000011d3 <+74>:    mov    rdi,rax
+
+call strcmp 
+  0x00000000000011d6 <+77>:    call   0x1090 <strcmp@plt>
+
+return 0 if the same
+   0x00000000000011dtb <+82>:    test   eax,eax
+
+[2]
+   0x00000000000011dd <+84>:    jne    0x11ed <main+100>
+   0x00000000000011df <+86>:    lea    rdi,[rip+0xe44]        # 0x202a
+   0x00000000000011e6 <+93>:    call   0x1070 <puts@plt>
+   0x00000000000011eb <+98>:    jmp    0x1207 <main+126>
+
+[2] ->
+   0x00000000000011ed <+100>:   lea    rdi,[rip+0xe46]        # 0x203a
+   0x00000000000011f4 <+107>:   call   0x1070 <puts@plt>
+   0x00000000000011f9 <+112>:   jmp    0x1207 <main+126>
+
+[1] ->
+   0x00000000000011fb <+114>:   lea    rdi,[rip+0xe3f]        # 0x2041
+   0x0000000000001202 <+121>:   call   0x1070 <puts@plt>	# prints Usage <key>
+   0x0000000000001207 <+126>:   mov    eax,0x0
+   0x000000000000120c <+131>:   leave  
+   0x000000000000120d <+132>:   ret    
+
