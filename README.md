@@ -29,8 +29,8 @@ set $eax=0			- set value of $eax register to 0
 x/s [address]			- print address value (string?)
 ```
 
-
-### Assembly
+---
+## Assembly
 
 ```
 rip/eip/ip			- instruction pointer (program counter)
