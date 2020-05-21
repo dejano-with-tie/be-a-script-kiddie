@@ -2,14 +2,16 @@
 GDB, [hopper](http://www.hopperapp.com/), [ida](https://www.hex-rays.com/products/ida/), [radare2](https://github.com/radare/radare2)
 
 ### Commands
-- `file` 		print file info
-- `man ascii`
-- `hexdump -C`
-- `strings` 		printable characters in file
-- `objdump -d` 		disassemble
-- `objdump -x` 		headers. Interesting sections: .text, .rodata (read only section)
-- `strace` 		trace system calls and signals (man syscalls)
-- `ltrace` 		trace library functions (strcmp, printf..)
+```
+file 			- print file info
+man ascii
+hexdump -C
+strings 		- printable characters in file
+objdump -d 	 	- disassemble
+objdump -x 		- headers. Interesting sections: .text, .rodata (read only section)
+strace 			- trace system calls and signals (man syscalls)
+ltrace 			- trace library functions (strcmp, printf..)
+```
 
 
 ### GDB
