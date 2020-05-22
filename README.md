@@ -1,5 +1,8 @@
 Inspired by [liveoverflow](https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN) youtube channel.
 
+## Resources
+- [byte flipping](https://www.sentinelone.com/blog/breaking-and-evading/)
+
 ## Tools
 GDB, [hopper](http://www.hopperapp.com/), [ida](https://www.hex-rays.com/products/ida/), [radare2](https://github.com/radare/radare2), [binary ninja](https://binary.ninja/)
 
@@ -69,17 +72,33 @@ afvn [new_name] ([old_name])  - rename argument/local
 ---
 ## Python
 
-### Hex
+### Converting numbers (hex/bin/dec)
 - convert hex to char: chr(hex)
+- int('1111', 2)
+- hex(...)
+- "\x41\xffABCD".encode('hex')
+- check struct library
+	- unpack()
+	- pack()
+jj
 
 ---
 ## Assembly
+- byte
+	- 8 bits
+- word
+	- 32bit on 32bit arhitecture
+	- 64bit on 64bit arhitecture
 ```
 rip/eip/ip			- instruction pointer (program counter)
 esp/rsp/sp			- stack pointer
 eax				- first 32 bits of 64bit rax registar
 ebp/ebp/bp      - base pointer register
 ```
+
+---
+Buffer overflow notes
+
 
 ---
 ## Challenges
