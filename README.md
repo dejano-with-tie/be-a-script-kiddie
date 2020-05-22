@@ -30,7 +30,11 @@ info registers			- print registers
 info break			- list breakpoints
 del [break-point-num]		- remove breakpoint
 set $eax=0			- set value of $eax register to 0
-x/s [address]			- print address value (string?)
+x/s [address]			- examin address value (string?)
+layout asm			- disassembled code always visible
+layout regs			- regs visible
+focus asm			- make assembly window active for scrolling
+focus regs			- make register window active for scrolling
 ```
 
 
@@ -41,7 +45,7 @@ aaa             - automaticaly analyse and autoname functions
 afl             - list all functions that radare found
 s               - seek. To seek to a main fn - s sys.main
 pdf             - prind disassembly of current function
-vv              - visual mode
+VV              - visual mode
                     - move with arrow keys
                     - cycle through blocks with tab
                     - ? help
@@ -49,9 +53,13 @@ vv              - visual mode
 r2 -d           - start radare in debug mode
 db [address]    - set break point
 :               - enter command mode
-:dc             - run a program
-s               - step into
-S               - step over
+dc             	- continue execution
+s               - step into *only in visual mode
+S               - step over *only in visual mode
+f7		- step into
+f8		- step over
+ds		- step into *only in normal
+dso		- step over *only in normal
 ood [args]      - reopen in debug mode (with args)
 oodf [file]     - reopen in debug mode using the given file
 dr              - show 'gpr' registers
