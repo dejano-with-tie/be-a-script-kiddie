@@ -89,11 +89,18 @@ jj
 - word
 	- 32bit on 32bit arhitecture
 	- 64bit on 64bit arhitecture
+
+
+#### General purpose registars
 ```
-rip/eip/ip			- instruction pointer (program counter)
-esp/rsp/sp			- stack pointer
 eax				- first 32 bits of 64bit rax registar
-ebp/ebp/bp      - base pointer register
+```
+
+#### Reserved registars
+```
+esp/rsp/sp			- stack pointer
+eip/rip/ip			- instruction pointer (program counter)
+ebp/rbp/bp      - base pointer register
 ```
 
 ---
