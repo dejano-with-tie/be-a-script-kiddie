@@ -2,6 +2,8 @@ Inspired by [liveoverflow](https://www.youtube.com/playlist?list=PLhixgUqwRTjxgl
 
 ## Resources
 - [byte flipping](https://www.sentinelone.com/blog/breaking-and-evading/)
+- [smashing the stack for fun and profit](http://phrack.org/issues/49/14.html)
+- [https://exploit.education/](https://exploit.education/)
 
 ## Tools
 GDB, [hopper](http://www.hopperapp.com/), [ida](https://www.hex-rays.com/products/ida/), [radare2](https://github.com/radare/radare2), [binary ninja](https://binary.ninja/)
@@ -27,6 +29,7 @@ disassemble main		- disassemble main fn
 ni 				- next instruction (step over)
 si				- step into
 run (r)				- run debug
+continue (c)        - continue
 break [address]			- set breakpoint, for example break *main, break *0x00005555555551fb
 [enter]				- repeat previous command
 info registers			- print registers
@@ -34,10 +37,22 @@ info break			- list breakpoints
 del [break-point-num]		- remove breakpoint
 set $eax=0			- set value of $eax register to 0
 x/s [address]			- examin address value (string?)
+x/wx $esp+0x5c          - examine value of stack-pointer+0x5c in hexadecimal format
+x/24wx $esp             - examine 24 addresses starting from stack pointer (examine stack)
 layout asm			- disassembled code always visible
 layout regs			- regs visible
 focus asm			- make assembly window active for scrolling
 focus regs			- make register window active for scrolling
+info proc mappings  - see memory mappings
+```
+
+#### hooks
+list of commands to be executed when execution stops on break point. Example:
+```
+define hook-stop
+> x/24wx $esp       - print stack
+> x/2i $eip         - print next two instructions
+> end
 ```
 
 
@@ -103,6 +118,10 @@ eip/rip/ip			- instruction pointer (program counter)
 ebp/rbp/bp      - base pointer register
 ```
 
+#### instructions
+```
+lea                - load effective address
+```
 ---
 Buffer overflow notes
 
