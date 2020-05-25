@@ -17,6 +17,7 @@ xxd             - hex dump or inverse
 strings 		- printable characters in file
 objdump -d 	 	- disassemble
 objdump -x 		- headers. Interesting sections: .text, .rodata (read only section)
+objdumo -t		- grap all symbols (can be used for mem inspection)
 strace 			- trace system calls and signals (man syscalls)
 ltrace 			- trace library functions (strcmp, printf..)
 ```
@@ -30,6 +31,7 @@ ni 				- next instruction (step over)
 si				- step into
 run (r)				- run debug
 continue (c)        - continue
+r < file			- provide input from file to run
 break [address]			- set breakpoint, for example break *main, break *0x00005555555551fb
 [enter]				- repeat previous command
 info registers			- print registers
